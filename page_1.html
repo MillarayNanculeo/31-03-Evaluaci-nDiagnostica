@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Evaluación diagnóstica de Introducción al Desarrollo Front End con HTML, CSS y JavaScript" />
+        <meta name="keywords" content="HTML, CSS, JavaScript" />
+        <meta name="author" content="Nombre Apellido" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <title>Sangre azul</title>
+        <style>
+
+            body{
+                font-family: 'Red Hat Mono', monospace;
+            }
+             h1 {
+                 font-size: calc(1rem + 5vw);
+                  font-weight: 700;
+                  text-align: center; 
+                  padding: 0.1rem;
+                  color: #232954;
+            }
+    
+            p {
+                padding: 2rem;
+                font-size: calc(0.5rem + 1vw);
+                text-align: center;
+                }
+                img {
+                    width: 30%;
+                    height: auto;
+                    align-items: center;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="uno"><a href="index.html">PORTADA</a></div>
+        <div id="otro"><strong><a href="page_1.html">01</a></strong> / <a href="page_2.html">02</a> / <a href="page_3.html">03</a></div>
+        <h1>Sangre azul</h1>
+       
+        <p>Las cacerolitas de mar tienen la sangre azul. Esto es debido a que en vez de hierro tienen cobre en la sangre.
+        </p>
+       <p> <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/03-horseshoe-crab-gettyimages-588158644.webp?w=1600&h=1067&q=100"></p>
+        
+        <script>
+            var botoncito;
+
+            function setup() {
+            createCanvas(windowWidth - 50, windowHeight - 50).position(25, 30).style("z-index", -1);
+            botoncito = createButton ('Descargar');
+            botoncito.position(windowWidth - 100, windowHeight - 100);
+            botoncito.mousePressed(impresora);
+            }
+
+            function impresora () {
+            saveCanvas("imagen", "png");
+            }
+
+            function draw() {
+            background(217, 180, 180);
+            noStroke();
+
+            for (let i = 0; i < height; i += 20) {
+            fill(227);
+            rect(0, i, width, 10);
+            fill(180, 209, 217);
+            rect(i, 0, 10, height);
+            }
+            
+            function windowResized() {
+                resizeCanvas(windowWidth - 50, windowHeight - 50);
+            }
+
+
+
+
+}
+
+        </script>
+    </body>
+</html>
